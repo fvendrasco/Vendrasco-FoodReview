@@ -44,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Adicionar"/>
                                 <connections>
-                                    <action selector="adicionar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vf1-I8-9Hj"/>
+                                    <action selector="adicionar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUN-MH-OSK"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex: 1 - Ruim / 5 - Excelente " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDn-Jh-IDZ">
@@ -59,8 +59,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="nomeTextField" destination="cLh-WL-sHb" id="Eb4-Oq-kXx"/>
-                        <outlet property="pratoTextField" destination="fDn-Jh-IDZ" id="PBJ-kn-Xwv"/>
+                        <outlet property="notaTextField" destination="fDn-Jh-IDZ" id="DRl-2v-Kag"/>
+                        <outlet property="pratoTextField" destination="cLh-WL-sHb" id="MaH-G8-s2Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var nomeTextField: UITextField!
     @IBOutlet var pratoTextField: UITextField!
+    @IBOutlet var notaTextField: UITextField!
 
     @IBAction func adicionar(_ sender: Any) {
         
-       let nome = nomeTextField.text
        let prato = pratoTextField.text
+       let nota = notaTextField.text
         
         
-        print("Comi \(nome) e dei a nota: \(prato)")
+        print("Comi \(prato) e dei a nota: \(nota)")
     }
 
 
