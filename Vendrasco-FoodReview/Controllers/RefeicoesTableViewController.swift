@@ -8,9 +8,9 @@
 
 import UIKit
 
-class RefeicoesTableViewController: UITableViewController {
+class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDelegate {
     
-    let refeicoes = [Refeicao (prato: "Macarrao", nota: 3 ),
+    var refeicoes = [Refeicao (prato: "Macarrao", nota: 3 ),
                      Refeicao (prato: "Pizza", nota: 5 ),
                      Refeicao (prato: "Farofa", nota: 4 )]
  
@@ -29,6 +29,23 @@ class RefeicoesTableViewController: UITableViewController {
         
         return celula
         
+    }
+    
+    func add(_ refeicao: Refeicao ){
+        refeicoes.append(refeicao)
+        
+        tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "adicionar" {
+            if let viewController = segue.destination as? ViewController {
+                viewController.delegate = self }
+            
+            
+        }
+    
     }
     
 }

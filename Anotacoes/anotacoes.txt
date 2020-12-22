@@ -1,0 +1,13 @@
+RefeicoesTableViewController => ViewController
+
+RefeicoesTableViewController => Protocolo => ViewController
+
+Protocolo => Somente as informacoes nescessarias. 
+
+
+--------------------------------------------------------------------------------
+ADICIONAR CLIQUE NA TABELA
+
+1 - Identificar o evento de cliquei na tablea
+2 - acesso a celula
+3 - colocar o check
