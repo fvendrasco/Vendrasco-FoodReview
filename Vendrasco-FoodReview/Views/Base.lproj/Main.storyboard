@@ -75,6 +75,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="itensTableView" destination="UVt-QP-VuT" id="fcc-eN-B3h"/>
                         <outlet property="notaTextField" destination="fDn-Jh-IDZ" id="DRl-2v-Kag"/>
                         <outlet property="pratoTextField" destination="cLh-WL-sHb" id="MaH-G8-s2Z"/>
                     </connections>

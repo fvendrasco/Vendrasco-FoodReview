@@ -13,13 +13,14 @@ class Refeicao: NSObject {
     
     let prato: String
     let nota: Int
-    let itens: Array<Item> = []
+    var itens: Array<Item> = []
     
     //MARK: - Construtor
     
-    init(prato: String, nota: Int) {
+    init(prato: String, nota: Int, itens: [Item] = []) {
         self.prato = prato
         self.nota = nota
+        self.itens = itens
     }
     
     //MARK: - Metodos

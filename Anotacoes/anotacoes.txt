@@ -11,3 +11,15 @@ ADICIONAR CLIQUE NA TABELA
 1 - Identificar o evento de cliquei na tablea
 2 - acesso a celula
 3 - colocar o check
+
+_________________________________________________
+
+ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if let cell = tableView.cellForRow(at: indexPath)
+        if(cell.accessoryType == .none) {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+    }
+}

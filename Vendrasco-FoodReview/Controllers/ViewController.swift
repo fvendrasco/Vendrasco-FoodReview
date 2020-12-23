@@ -14,19 +14,46 @@ protocol AdicionaRefeicaoDelegate {
     
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AdicionaItensDelegate {
     
+    
+    //MARK: - IBOutlet
+    
+    @IBOutlet weak var itensTableView: UITableView!
     
     //MARK: - Atributos
     
     var delegate: AdicionaRefeicaoDelegate?
-    var itens: [String] = ["Queijo", "Molho de Tomate", "Manjericao", "Molho Branco"]
+    var itens: [Item] = [Item(prato: "Molho de Tomate", calorias: 50.0 ),
+                         Item(prato: "Queijo", calorias: 100.0 ),
+                         Item(prato: "Pesto", calorias: 150.0 ),
+                         Item(prato: "Molho Braco", calorias: 200.0 ), ]
     
+    var itensSelecionados: [Item] = []
     
     //MARK: - IBOutlets
     
     @IBOutlet var pratoTextField: UITextField?
     @IBOutlet var notaTextField: UITextField?
+    
+    //MARK: - View life cycle
+    
+    override func viewDidLoad() {
+        let botaoAdicionaItem = UIBarButtonItem( title: "Adicionar", style: .plain, target: self, action: #selector (adicionarItens))
+        navigationItem.rightBarButtonItem = botaoAdicionaItem
+    }
+    
+    @objc func adicionarItens() {
+        let adicionarItensViewController = AdicionarItensViewController(delegate: self)
+        navigationController?.pushViewController(adicionarItensViewController, animated: true)
+    }
+    
+    func add(_ item: Item) {
+        itens.append(item)
+        itensTableView.reloadData()
+        
+    }
+
 
     //MARK: - UITableViewDataSource
     
@@ -40,7 +67,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let linhaDaTabela = indexPath.row
         let item = itens [linhaDaTabela]
         
-        celula.textLabel?.text = item
+        celula.textLabel?.text = item.prato
         
         return celula
     }
@@ -54,8 +81,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if celula.accessoryType == .none{
             celula.accessoryType = .checkmark
+            
+            let linhaDaTabela = indexPath.row
+        
+            itensSelecionados.append(itens[linhaDaTabela])
+            
         } else {
             celula.accessoryType = .none
+            
+            let item = itens[indexPath.row]
+           if let position = itensSelecionados.index(of: item){
+                itensSelecionados.remove(at: position)
+            
+            }
         }
     }
     
@@ -69,7 +107,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let prato = nomeDoPrato
             
             if let nota = Int (notaDaRefeicao){
+                
                 let refeicao = Refeicao (prato: prato, nota: nota)
+                
+                
                 
                 print("Comi \(refeicao.prato) e dei a nota: \(refeicao.nota)")
                 
