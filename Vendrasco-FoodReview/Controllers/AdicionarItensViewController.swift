@@ -16,10 +16,9 @@ class AdicionarItensViewController: UIViewController {
     
     //MARK: - IBOutlets
     
-    
     @IBOutlet weak var pratoTextField: UITextField!
-    
     @IBOutlet weak var caloriasTextField: UITextField!
+    
     
     //MARK: - Atributos
     
@@ -37,8 +36,6 @@ class AdicionarItensViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
     }
 
     // MAR: - IBAction

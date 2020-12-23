@@ -102,28 +102,69 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func adicionar(_ sender: Any) {
         
-        if let nomeDoPrato = pratoTextField?.text, let notaDaRefeicao = notaTextField?.text {
-            
-            let prato = nomeDoPrato
-            
-            if let nota = Int (notaDaRefeicao){
-                
-                let refeicao = Refeicao (prato: prato, nota: nota)
-                
-                
-                
-                print("Comi \(refeicao.prato) e dei a nota: \(refeicao.nota)")
-                
-           
-                delegate?.add(refeicao)
-                navigationController?.popViewController(animated: true)
-                
-                
-            }else{
-                print("Erro ao tentar criar a refeição")
-            }
+        guard let nomeDoPrato = pratoTextField?.text else {
+            return
         }
+        
+        guard let notaDoPrato = notaTextField?.text, let nota = Int(notaDoPrato) else {
+            return
+        }
+        
+        let refeicao = Refeicao(prato: nomeDoPrato, nota: nota, itens: itensSelecionados)
+        
+        print("comi \(refeicao.prato) e fiquei com felicidade: \(refeicao.nota)")
+        
+        delegate?.add(refeicao)
+        navigationController?.popViewController(animated: true)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    @IBAction func adicionar(_ sender: Any) {
+//
+//        if let nomeDoPrato = pratoTextField?.text, let notaDaRefeicao = notaTextField?.text {
+//
+//            let prato = nomeDoPrato
+//
+//            if let nota = Int (notaDaRefeicao){
+//
+//                let refeicao = Refeicao (prato: prato, nota: nota)
+//
+//
+//
+//                print("Comi \(refeicao.prato) e dei a nota: \(refeicao.nota)")
+//
+//
+//                delegate?.add(refeicao)
+//                navigationController?.popViewController(animated: true)
+//
+//
+//            }else{
+//                print("Erro ao tentar criar a refeição")
+//            }
+//        }
+//    }
 }
 
 
