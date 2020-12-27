@@ -8,7 +8,9 @@
 
 import UIKit
 
-class Refeicao: NSObject {
+class Refeicao: NSObject, NSCoding {
+ 
+    
     //MARK: - Atributos
     
     let prato: String
@@ -22,6 +24,21 @@ class Refeicao: NSObject {
         self.nota = nota
         self.itens = itens
     }
+    
+    
+    //MARK: - NSCoding
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(prato, forKey: "prato")
+        aCoder.encode(nota,forKey: "nota" )
+        aCoder.encode(itens, forKey: "itens")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        prato = aDecoder.decodeObject(forKey: "prato") as! String
+        nota = aDecoder.decodeInteger(forKey: "nota")
+        itens = aDecoder.decodeObject(forKey: "itens") as! Array <Item>
+    }
+    
     
     //MARK: - Metodos
     func totalDeCalorias () -> Double{

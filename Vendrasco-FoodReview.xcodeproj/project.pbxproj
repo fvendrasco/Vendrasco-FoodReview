@@ -12,6 +12,10 @@
 		5FE31B16259172D90029A4FA /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE31B15259172D90029A4FA /* RefeicoesTableViewController.swift */; };
 		5FE31B1925926D9E0029A4FA /* AdicionarItensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE31B1725926D9E0029A4FA /* AdicionarItensViewController.swift */; };
 		5FE31B1A25926D9E0029A4FA /* AdicionarItensViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FE31B1825926D9E0029A4FA /* AdicionarItensViewController.xib */; };
+		5FE31B1C2593D0250029A4FA /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE31B1B2593D0250029A4FA /* Alerta.swift */; };
+		5FE31B1E25962CC80029A4FA /* RemoveRefeicaoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE31B1D25962CC80029A4FA /* RemoveRefeicaoController.swift */; };
+		5FE31B2025990F360029A4FA /* refeicaoDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE31B1F25990F360029A4FA /* refeicaoDao.swift */; };
+		5FE31B22259913280029A4FA /* itemDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE31B21259913280029A4FA /* itemDao.swift */; };
 		5FF81291258A91D2001CE614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF81290258A91D2001CE614 /* AppDelegate.swift */; };
 		5FF81293258A91D2001CE614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF81292258A91D2001CE614 /* ViewController.swift */; };
 		5FF81296258A91D2001CE614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF81294258A91D2001CE614 /* Main.storyboard */; };
@@ -44,6 +48,10 @@
 		5FE31B15259172D90029A4FA /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
 		5FE31B1725926D9E0029A4FA /* AdicionarItensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarItensViewController.swift; sourceTree = "<group>"; };
 		5FE31B1825926D9E0029A4FA /* AdicionarItensViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdicionarItensViewController.xib; sourceTree = "<group>"; };
+		5FE31B1B2593D0250029A4FA /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
+		5FE31B1D25962CC80029A4FA /* RemoveRefeicaoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveRefeicaoController.swift; sourceTree = "<group>"; };
+		5FE31B1F25990F360029A4FA /* refeicaoDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = refeicaoDao.swift; sourceTree = "<group>"; };
+		5FE31B21259913280029A4FA /* itemDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemDao.swift; sourceTree = "<group>"; };
 		5FF8128D258A91D2001CE614 /* Vendrasco-FoodReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vendrasco-FoodReview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF81290258A91D2001CE614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FF81292258A91D2001CE614 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +97,9 @@
 			children = (
 				5FE31A9C259124870029A4FA /* Item.swift */,
 				5FE31A9A259123C00029A4FA /* Refeicao.swift */,
+				5FE31B1B2593D0250029A4FA /* Alerta.swift */,
+				5FE31B1F25990F360029A4FA /* refeicaoDao.swift */,
+				5FE31B21259913280029A4FA /* itemDao.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,6 +110,7 @@
 				5FE31B1725926D9E0029A4FA /* AdicionarItensViewController.swift */,
 				5FF81292258A91D2001CE614 /* ViewController.swift */,
 				5FE31B15259172D90029A4FA /* RefeicoesTableViewController.swift */,
+				5FE31B1D25962CC80029A4FA /* RemoveRefeicaoController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,11 +309,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FE31A9D259124870029A4FA /* Item.swift in Sources */,
+				5FE31B22259913280029A4FA /* itemDao.swift in Sources */,
+				5FE31B1E25962CC80029A4FA /* RemoveRefeicaoController.swift in Sources */,
 				5FE31B1925926D9E0029A4FA /* AdicionarItensViewController.swift in Sources */,
+				5FE31B2025990F360029A4FA /* refeicaoDao.swift in Sources */,
 				5FF81293258A91D2001CE614 /* ViewController.swift in Sources */,
 				5FE31B16259172D90029A4FA /* RefeicoesTableViewController.swift in Sources */,
 				5FE31A9B259123C00029A4FA /* Refeicao.swift in Sources */,
 				5FF81291258A91D2001CE614 /* AppDelegate.swift in Sources */,
+				5FE31B1C2593D0250029A4FA /* Alerta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

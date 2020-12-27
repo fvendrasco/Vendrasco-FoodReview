@@ -39,22 +39,19 @@ class AdicionarItensViewController: UIViewController {
     }
 
     // MAR: - IBAction
+    // navegar para a proxima tela: navigationController.push()
+    // voltar para a tela anterior: navigationController.pop()
+    //if let ou guard let - para extrair valores do campo "TextField"
     
     @IBAction func adicionarItem(_ sender: Any) {
-        // navegar para a proxima tela: navigationController.push()
-        // voltar para a tela anterior: navigationController.pop()
-        //if let ou guard let - para extrair valores do campo "TextField"
         
-        guard let prato = pratoTextField.text, let calorias = caloriasTextField.text else{
-            return
-        }
+        guard let prato = pratoTextField.text, let calorias = caloriasTextField.text else { return }
         
         if let numeroDeCalorias = Double(calorias) {
-        
         let item = Item(prato: prato, calorias: numeroDeCalorias)
+
         delegate?.add(item)
         navigationController?.popViewController(animated: true)
         }
-        
     }
 }

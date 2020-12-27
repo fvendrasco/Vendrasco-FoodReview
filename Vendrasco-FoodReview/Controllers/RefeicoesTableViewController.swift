@@ -10,10 +10,12 @@ import UIKit
 
 class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDelegate {
     
-    var refeicoes = [Refeicao (prato: "Macarrao", nota: 3 ),
-                     Refeicao (prato: "Pizza", nota: 5 ),
-                     Refeicao (prato: "Farofa", nota: 4 )]
- 
+    var refeicoes: [Refeicao] = []
+    
+   override func viewDidLoad() {
+        refeicoes = RefeicaoDao().recupera()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return refeicoes.count
     }
@@ -33,6 +35,7 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
     func add(_ refeicao: Refeicao){
         refeicoes.append(refeicao)
         tableView.reloadData()
+        RefeicaoDao().save(refeicoes)
     }
     
     @objc func mostrarDetalhes(_ gesture: UILongPressGestureRecognizer){
@@ -42,15 +45,14 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
             guard let indexPath = tableView.indexPath(for: celula) else{ return }
             let refeicao = refeicoes[indexPath.row]
             
-            let alerta = UIAlertController(title: refeicao.prato, message: refeicao.detalhes(), preferredStyle: .alert)
-            let botaoCancelar = UIAlertAction (title: "OK", style: .cancel, handler: nil)
             
-            alerta.addAction(botaoCancelar)
+            RemoveRefeicaoViewController(controller: self).exibe(refeicao, handler: {alert in self.refeicoes.remove(at: indexPath.row)
+                self.tableView.reloadData()})
             
-            present(alerta, animated: true, completion: nil)
         }
     }
     
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "adicionar" {
